@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 pylint = "*"
+requests = "*"
+pytest-docker = "*"
+docker-compose = "*"
 
 [packages]
 flask = "*"
