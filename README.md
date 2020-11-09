@@ -9,3 +9,12 @@ Check out the project and have a look around. From the root directory, issue a p
 ```docker run --rm -d -p 5000:5000  template-python-docker:latest```
 
  Ensure that you get a "Hello World" message from http://localhost:5000. If this all works, you're good.
+ 
+ ## Tests
+ 
+The Unit tests are unit tests, nothing magical here. This project is using pytest-docker to automate the building/tearing down of docker containers for the purposes of integration tests. Details on this package can be found here https://github.com/avast/pytest-docker.
+ 
+The key bits are:
+/tests/docker-compose.yml residing in the /tests directory which lays out how to bring up the app for testing
+/tests/integration/conftest.py with the http_service fixture that is then available in all integration tests
+Each integration test needs to use the fixture http_service e.g. ```def test_hello_world(http_service: str)```
