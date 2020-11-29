@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  template-python-docker:
+    environment: 
+      - VIRTUAL_HOST=test.local
+    image: codeanish/template-python-docker:latest
+    restart: always
+    container_name: template-python-docker
