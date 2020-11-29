@@ -18,3 +18,6 @@ The key bits are:
 * /tests/docker-compose.yml residing in the /tests directory which lays out how to bring up the app for testing
 * /tests/integration/conftest.py with the http_service fixture that is then available in all integration tests
 * Each integration test needs to use the fixture http_service e.g. ```def test_hello_world(http_service: str)```
+
+## NGINX Sidecar
+I'm implementing a sidecar pattern here whereby there is a docker-compose.yml file which specifies this container as well as an NGINX proxy container. The job of this proxy container is to proxy requests to the docker container which does not expose itself outside of the network that it is in (only accessible by this sidecar). This is still a work in progress while I find my desired solution to this, so I wouldn't recommend using the docker-compose just yet.
