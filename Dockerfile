@@ -13,4 +13,4 @@ ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
 
 CMD ["python", "app/api.py"]
 
-EXPOSE 8081
+EXPOSE 5000

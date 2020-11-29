@@ -13,4 +13,4 @@ def answer_to_the_ultimate_question_of_life():
     return "42"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8081)
+    app.run(host='0.0.0.0')
